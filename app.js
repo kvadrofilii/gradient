@@ -1,25 +1,32 @@
-//- Получаем DOM-элемент с id "color-list1"
-const colorList1 = document.querySelector('#color-list1');
-//- Получаем DOM-элемент с id "color-list2"
-const colorList2 = document.querySelector('#color-list2');
-//- Переменные для цветов градиента
-let color1 = '#0097bd';
-let color2 = '#9d4410';
+const firstColorList = document.querySelector('#firs-color-list');
+const secondColorList = document.querySelector('#second-color-list');
+const sidebar = document.querySelector('#sidebar');
+let firstColor = '#0097bd';
+let secondColor = '#9d4410';
 
-//- Считываем нажатие кнопок с выбором первого цвета
-colorList1.addEventListener('click', (event) => {
-  //- Проверяем нажатие кнопок с выбором первого цвета
+firstColorList.addEventListener('click', (event) => {
   if (event.target.classList.contains('color-btn')) {
-    //- Записываем в переменную color1 значение "data-color" от нажатой кнопки
-    color1 = event.target.getAttribute('data-color');
+    firstColor = event.target.getAttribute('data-color');
+    setGradient(sidebar);
   }
 });
 
-//- Считываем нажатие кнопок с выбором второго цвета
-colorList2.addEventListener('click', (event) => {
-  //- Проверяем нажатие кнопок с выбором второго цвета
+secondColorList.addEventListener('click', (event) => {
   if (event.target.classList.contains('color-btn')) {
-    //- Записываем в переменную color2 значение "data-color" от нажатой кнопки
-    color2 = event.target.getAttribute('data-color');
+    secondColor = event.target.getAttribute('data-color');
+    setGradient(sidebar);
   }
 });
+
+function setGradient(element) {
+  element.style.background = `linear-gradient(45deg, ${firstColor}, ${secondColor})`;
+}
+
+function setColorList(element, color) {
+  element.addEventListener('click', (event) => {
+    if (event.target.classList.contains('color-btn')) {
+      color = event.target.getAttribute('data-color');
+      setGradient(sidebar);
+    }
+  });
+}
