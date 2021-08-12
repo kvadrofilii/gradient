@@ -10,6 +10,12 @@ body {
   font-family: 'Roboto', sans-serif;
   height: 100vh;
   background: #29323c;
+  color: white;
+}
+
+h1,
+h2 {
+  margin: 1em 0;
 }
 
 .container {
@@ -21,7 +27,7 @@ body {
 
 .sidebar {
   height: 100%;
-  width: 35%;
+  width: 30%;
   position: absolute;
   top: 0;
   left: 0;
@@ -30,11 +36,18 @@ body {
 .sidebar > div {
   height: 100%;
   width: 100%;
+}
+
+.main {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 30%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #fff;
 }
 
 .color-list {
@@ -52,31 +65,11 @@ body {
 .color-btn {
   background-color: transparent;
   border: 2px solid #c0c0c0;
-  color: #fff;
   cursor: pointer;
-  font-family: inherit;
-  padding: 0.5rem 1rem;
-  font-size: 1.5rem;
+  height: 50px;
+  width: 100px;
 }
 
 .color-btn:hover {
   border: 2px solid #16d9e3;
-  color: #16d9e3;
-}
-
-.main {
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 35%;
-  width: 65%;
-  transition: transform 0.5s ease-in-out;
-}
-
-.main > div {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  height: 100%;
-  width: 100%;
 }
